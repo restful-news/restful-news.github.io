@@ -1,6 +1,6 @@
 theme: jekyll-theme-architect
 title: RESTful News
-description: Retreive realtime news articles about Australian companies.
+description: Retrieve news articles about Australian companies.
 show_sidebar: true
 github:
   docs: /docs
