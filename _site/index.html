@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=" media="screen" type="text/css">
+    <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>RESTful News | Retreive realtime news articles about Australian companies.</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="RESTful News" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Retreive realtime news articles about Australian companies." />
+<meta property="og:description" content="Retreive realtime news articles about Australian companies." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="RESTful News" />
+<script type="application/ld+json">
+{"name":"RESTful News","description":"Retreive realtime news articles about Australian companies.","@type":"WebSite","url":"http://localhost:4000/","headline":"RESTful News","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="http://localhost:4000/">
+          <h1>RESTful News</h1>
+        </a>
+        <h2>Retreive realtime news articles about Australian companies.</h2>
+        
+        
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1 id="restful-news-api">RESTful News API</h1>
+<p>This API enables users to retrieve a list of news articles about Australian companies. The source of the news will be from several sources including The Guardian, USA Tday etc.</p>
+
+<p>The API conventions we aim to use are outlined in the <a href="https://swagger.io/docs/specification/about/">OpenAPI specifications</a>.</p>
+
+<p>Express based RESTful News API for starter applications. This API’s skeleton is based on the Yo RESTful API, with an updated authentication routine (without being transpiled using babel).</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Help keep the code clean be following our contribution protocols (<a href="CONTRIBUTING.md">CONTRIBUTING.md</a>).</p>
+
+<p>Versioning will be managed by the product manager(s) and can be found in the changelog (<a href="CHANGELOG.md">CHANGELOG.md</a>)</p>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+  <li>MongoDB</li>
+  <li>Node &gt;7.4</li>
+  <li>pm2 (production)</li>
+</ul>
+
+<h2 id="commands">Commands</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">test</span> <span class="c"># test using Jest</span>
+npm run <span class="nb">test</span>:unit <span class="c"># run unit tests</span>
+npm run <span class="nb">test</span>:integration <span class="c"># run integration tests</span>
+npm run coverage <span class="c"># test and open the coverage report in the browser</span>
+npm run lint <span class="c"># lint using ESLint</span>
+npm run dev <span class="o">()</span> <span class="c"># run the API in development mode</span>
+npm run prod <span class="c"># run the API in production mode</span>
+npm run docs <span class="c"># generate API docs</span>
+</code></pre></div></div>
+
+<h2 id="development-task">Development task</h2>
+
+<p><code class="highlighter-rouge">npm run dev</code></p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme">HTTP BASIC Authentication</a> returning a JWT token.</p>
+
+<h4 id="creating-a-user">Creating a user</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://0.0.0.0:9000/users <span class="nt">-i</span> <span class="nt">-d</span> <span class="s2">"email=test@example.com&amp;password=123456&amp;access_token=MASTER_KEY_HERE"</span>
+</code></pre></div></div>
+
+<h4 id="authenticating-a-user">Authenticating a user</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://0.0.0.0:9000/auth <span class="nt">-i</span> <span class="nt">-u</span> <span class="nb">test</span>@example.com:123456 <span class="nt">-d</span> <span class="s2">"access_token=MASTER_KEY_HERE"</span>
+</code></pre></div></div>
+
+<h2 id="error-handling">Error handling</h2>
+
+<p>Errors are handled by the <code class="highlighter-rouge">services/error</code> middleware. You can pass errors within an async call by calling <code class="highlighter-rouge">next(error)</code> where error is an Object with a Prototype of error. The APIError constructor function has been provided for creating anticipated operational errors.</p>
+
+<h2 id="logging">Logging</h2>
+
+<p>Logging is achieved via Pino. In development mode we can pipe Node’s stdout into Pino for pretty printing.</p>
+
+<h2 id="directory-structure">Directory structure</h2>
+
+<h3 id="overview">Overview</h3>
+
+<p>You can customize the <code class="highlighter-rouge">src</code> and <code class="highlighter-rouge">api</code> directories.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/
+├─ api/
+│  ├─ user/
+│  │  ├─ controller.js
+│  │  ├─ index.js
+│  │  ├─ index.test.js
+│  │  ├─ model.js
+│  │  └─ model.test.js
+│  └─ index.js
+├─ services/
+│  ├─ express/
+│  ├─ facebook/
+│  ├─ mongoose/
+│  ├─ passport/
+│  ├─ sendgrid/
+│  └─ your-service/
+├─ app.js
+├─ config.js
+└─ index.js
+</code></pre></div></div>
+
+<h3 id="srcapi">src/api/</h3>
+
+<p>Here is where the API endpoints are defined. Each API has its own folder.</p>
+
+<h4 id="srcapisome-endpointmodeljs">src/api/some-endpoint/model.js</h4>
+
+<p>It defines the Mongoose schema and model for the API endpoint. Any changes to the data model should be done here.</p>
+
+<h4 id="srcapisome-endpointcontrollerjs">src/api/some-endpoint/controller.js</h4>
+
+<p>This is the API controller file. It defines the main router middlewares which use the API model.</p>
+
+<h4 id="srcapisome-endpointindexjs">src/api/some-endpoint/index.js</h4>
+
+<p>This is the entry file of the API. It defines the routes using, along other middlewares (like session, validation etc.), the middlewares defined in the <code class="highlighter-rouge">some-endpoint.controller.js</code> file.</p>
+
+<h3 id="services">services/</h3>
+
+<p>Here you can put <code class="highlighter-rouge">helpers</code>, <code class="highlighter-rouge">libraries</code> and other types of modules which you want to use in your APIs.</p>
+
+<h1 id="running-on-aws-ubuntu-1604-ami">Running on AWS Ubuntu 16.04 AMI</h1>
+<ol>
+  <li>Clone repo to <code class="highlighter-rouge">/srv/restful-news</code> (use <code class="highlighter-rouge">~/.ssh/read-key</code> &amp; <code class="highlighter-rouge">~/.ssh/config</code> file)</li>
+  <li>Set environment variables file <code class="highlighter-rouge">.env</code> (see .env.example)</li>
+  <li>Run <code class="highlighter-rouge">restful-news/scripts/init.sh</code> to set up server</li>
+</ol>
+
+<h2 id="useful-commands">Useful commands</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">docker-compose logs</code> Show logs</li>
+  <li>TODO: Route up proper PM2 logs to file</li>
+</ul>
+
+<h2 id="environment-setup">Environment setup</h2>
+
+<p>Environment variables from <code class="highlighter-rouge">.env</code> are accessible by the Node app through docker-compose.yml which routes them into the api container. PM2 automatically makes them available to each Node server.</p>
+
+        </section>
+
+        <aside id="sidebar">
+            
+            <a href="/" class="button">
+                <small>Site</small>
+                Home
+            </a>
+            <a href="/team" class="button">
+                <small>Our Dev</small>
+                Team
+            </a>
+            <a href="/docs" target="_blank" class="button">
+                <small>API</small>
+                Docs
+            </a>
+            <a href="https://github.com/mrchrisjoy/restful-news/archive/master.zip" class="button">
+              <small>Download</small>
+              .zip file
+            </a>
+            
+
+            
+        </aside>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

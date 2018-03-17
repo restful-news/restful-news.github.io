@@ -1,0 +1,14 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+aside a.button {
+    display: block;
+    width: 138px;
+    padding-left: 14px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    background: none;
+    background-color: rgb(55, 152, 216);
+}
