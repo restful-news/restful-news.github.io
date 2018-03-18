@@ -2,114 +2,18 @@
 layout: default
 ---
 # RESTful News API
-This API enables users to retrieve a list of news articles about Australian companies.
+RESTful News API enables developers to build appl.
 
-The API conventions we aim to use are outlined in the [OpenAPI specifications](https://swagger.io/docs/specification/about/).
+RESTful News API conventions are based on [OpenAPI specifications](https://swagger.io/docs/specification/about/).
 
-Express based RESTful News API for trading applications. This API's skeleton is based on the Yo RESTful API, with an updated authentication routine (without being transpiled using babel). 
 
-## Requirements
-- MongoDB
-- Node >7.4
-- pm2 (production)
-
-## Commands
-
-```bash
-npm test # test using Jest
-npm run test:unit # run unit tests
-npm run test:integration # run integration tests
-npm run coverage # test and open the coverage report in the browser
-npm run lint # lint using ESLint
-npm run dev () # run the API in development mode
-npm run prod # run the API in production mode
-npm run docs # generate API docs
-```
-
-## Development task
-
-```npm run dev```
-
+# Basic Usage 
 ## Authentication
-
 [HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.
-
-#### Creating a user
+### Creating a user
 ```bash
-curl -X POST http://0.0.0.0:9000/users -i -d "email=test@example.com&password=123456&access_token=MASTER_KEY_HERE"
+curl -X POST http://api.restfulnews.com/users -i -d "email=test@example.com&password=123456&access_token=MASTER_KEY_HERE"
 ```
-
-#### Authenticating a user
 ```bash
-curl -X POST http://0.0.0.0:9000/auth -i -u test@example.com:123456 -d "access_token=MASTER_KEY_HERE"
+curl -X POST http://api.restfulnews.com/auth -i -u test@example.com:123456 -d "access_token=MASTER_KEY_HERE"
 ```
-
-## Error handling
-
-Errors are handled by the `services/error` middleware. You can pass errors within an async call by calling `next(error)` where error is an Object with a Prototype of error. The APIError constructor function has been provided for creating anticipated operational errors.
-
-## Logging
-
-Logging is achieved via Pino. In development mode we can pipe Node's stdout into Pino for pretty printing.
-
-## Directory structure
-
-### Overview
-
-You can customize the `src` and `api` directories.
-
-```
-src/
-├─ api/
-│  ├─ user/
-│  │  ├─ controller.js
-│  │  ├─ index.js
-│  │  ├─ index.test.js
-│  │  ├─ model.js
-│  │  └─ model.test.js
-│  └─ index.js
-├─ services/
-│  ├─ express/
-│  ├─ facebook/
-│  ├─ mongoose/
-│  ├─ passport/
-│  ├─ sendgrid/
-│  └─ your-service/
-├─ app.js
-├─ config.js
-└─ index.js
-```
-
-### src/api/
-
-Here is where the API endpoints are defined. Each API has its own folder.
-
-#### src/api/some-endpoint/model.js
-
-It defines the Mongoose schema and model for the API endpoint. Any changes to the data model should be done here.
-
-#### src/api/some-endpoint/controller.js
-
-This is the API controller file. It defines the main router middlewares which use the API model.
-
-#### src/api/some-endpoint/index.js
-
-This is the entry file of the API. It defines the routes using, along other middlewares (like session, validation etc.), the middlewares defined in the `some-endpoint.controller.js` file.
-
-### services/
-
-Here you can put `helpers`, `libraries` and other types of modules which you want to use in your APIs.
-
-# Running on AWS Ubuntu 16.04 AMI
-1. Clone repo to `/srv/restful-news` (use `~/.ssh/read-key` & `~/.ssh/config` file)
-2. Set environment variables file `.env` (see .env.example)
-2. Run `restful-news/scripts/init.sh` to set up server
-
-## Useful commands
-
-- `docker-compose logs` Show logs
-- TODO: Route up proper PM2 logs to file
-
-## Environment setup
-
-Environment variables from `.env` are accessible by the Node app through docker-compose.yml which routes them into the api container. PM2 automatically makes them available to each Node server.

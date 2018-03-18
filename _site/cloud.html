@@ -7,23 +7,23 @@
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/style.css?v=" media="screen" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
-    <title>RESTful News</title>
+    <title>Cloud Deployment | RESTful News</title>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>RESTful News | Retrieve news articles about Australian companies.</title>
+<title>Cloud Deployment | RESTful News</title>
 <meta name="generator" content="Jekyll v3.7.2" />
-<meta property="og:title" content="RESTful News" />
+<meta property="og:title" content="Cloud Deployment" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Retrieve news articles about Australian companies." />
 <meta property="og:description" content="Retrieve news articles about Australian companies." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/cloud.html" />
+<meta property="og:url" content="http://localhost:4000/cloud.html" />
 <meta property="og:site_name" content="RESTful News" />
 <script type="application/ld+json">
-{"name":"RESTful News","description":"Retrieve news articles about Australian companies.","@type":"WebSite","url":"http://localhost:4000/","headline":"RESTful News","@context":"http://schema.org"}</script>
+{"description":"Retrieve news articles about Australian companies.","@type":"WebPage","url":"http://localhost:4000/cloud.html","headline":"Cloud Deployment","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -43,19 +43,25 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1 id="restful-news-api">RESTful News API</h1>
-<p>RESTful News API enables developers to build appl.</p>
+          <h1 id="cloud-deployment">Cloud Deployment</h1>
 
-<p>RESTful News API conventions are based on <a href="https://swagger.io/docs/specification/about/">OpenAPI specifications</a>.</p>
+<h2 id="running-on-aws-ubuntu-1604-ami">Running on AWS Ubuntu 16.04 AMI</h2>
+<ol>
+  <li>Clone repo to <code class="highlighter-rouge">/srv/restful-news</code> (use <code class="highlighter-rouge">~/.ssh/read-key</code> &amp; <code class="highlighter-rouge">~/.ssh/config</code> file)</li>
+  <li>Set environment variables file <code class="highlighter-rouge">.env</code> (see .env.example)</li>
+  <li>Run <code class="highlighter-rouge">restful-news/scripts/init.sh</code> to set up server</li>
+</ol>
 
-<h1 id="basic-usage">Basic Usage</h1>
-<h2 id="authentication">Authentication</h2>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme">HTTP BASIC Authentication</a> returning a JWT token.</p>
-<h3 id="creating-a-user">Creating a user</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://api.restfulnews.com/users <span class="nt">-i</span> <span class="nt">-d</span> <span class="s2">"email=test@example.com&amp;password=123456&amp;access_token=MASTER_KEY_HERE"</span>
-</code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://api.restfulnews.com/auth <span class="nt">-i</span> <span class="nt">-u</span> <span class="nb">test</span>@example.com:123456 <span class="nt">-d</span> <span class="s2">"access_token=MASTER_KEY_HERE"</span>
-</code></pre></div></div>
+<h2 id="useful-commands">Useful commands</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">docker-compose logs</code> Show logs</li>
+  <li>TODO: Route up proper PM2 logs to file</li>
+</ul>
+
+<h2 id="environment-setup">Environment setup</h2>
+
+<p>Environment variables from <code class="highlighter-rouge">.env</code> are accessible by the Node app through docker-compose.yml which routes them into the api container. PM2 automatically makes them available to each Node server.</p>
 
         </section>
 

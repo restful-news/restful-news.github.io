@@ -7,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
-
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -43,18 +43,26 @@
                 <small>Site</small>
                 Home
             </a>
-            <a href="{{ site.github.team}}" class="button">
+            <a href="/team" class="button">
                 <small>Our Dev</small>
                 Team
+            </a>
+            <a href="/cloud" class="button">
+              <small>Cloud</small>
+                Deploy
+            </a>
+            <a href="/local" class="button">
+              <small>Local</small>
+                Install
             </a>
             <a href="{{ site.github.docs}}" target="_blank" class="button">
                 <small>API</small>
                 Docs
             </a>
-            <a href="{{ site.github.zip_url }}" class="button">
+            <!-- <a href="{{ site.github.zip_url }}" class="button">
               <small>Download</small>
               .zip file
-            </a>
+            </a> -->
             {% endif %}
 
             {% if site.github.is_project_page %}
