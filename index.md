@@ -4,9 +4,9 @@ layout: default
 
 <center><span class="site-title">Everything you need for intelligent news apps.</span></center><br>
 
-RESTful News API integrates natural language processing technologies with an open indexer, allowing developers to collate different news sources effectively. Developers can use their own API keys for different news platforms if they wish to exceed our 250 reqs/day limit.
+RESTful News integrates natural language processing technologies with an open indexer, allowing developers to collate different news sources effectively. Developers can use their own API keys for different news platforms if they wish to exceed our 250 reqs/day limit.
 
-RESTful News API follows the [OpenAPI specifications](https://swagger.io/docs/specification/about/).
+RESTful News follows the [OpenAPI specifications](https://swagger.io/docs/specification/about/).
 
 <div class="services-block">
     <div class="member trading">
@@ -23,7 +23,7 @@ RESTful News API follows the [OpenAPI specifications](https://swagger.io/docs/sp
 
 # API Usage
 
-You can use our public news api (`api.restfulnews.com`) from within the browser (using CORS).
+You can use our public news api (`api.restfulnews.com`) from within your website / SPA using CORS.
 
 ## Authentication
 [HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.
