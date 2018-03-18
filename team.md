@@ -7,7 +7,7 @@ title: Our Team
     <div class="member">
         <img src="assets/images/humans/JoyC.jpg" />
         <span>Chris Joy</span>
-        <small>Product Owner <br> Development Lead</small>
+        <small>Product Owner / Maintainer <br> Development Lead</small>
     </div>
     <div class="member">
         <img src="assets/images/humans/DolkO.jpg" />
