@@ -976,10 +976,21 @@ aside a.button {
   width: 138px;
   padding-left: 14px;
   margin-bottom: 20px;
-  font-size: 24px;
-  background: none;
+  font-size: 2em;
+  background: url(../images/header-bg.jpg) 0 0 repeat-x;
   background-color: #3798d8; }
 
+header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  background: #2e7bcf url("/assets/images/news_banner02.jpg") 0 0 no-repeat;
+  border-bottom: solid 0px #275da1;
+  background-size: cover; }
+
+/*
+ * Team 
+ */
 .team-block {
   display: inline-block; }
 
@@ -991,12 +1002,18 @@ aside a.button {
   margin-bottom: 30px; }
 
 .team-block .member small {
+  color: grey; }
+
+.team-block .member span {
   display: block;
   font-weight: bold; }
 
 .team-block .member img {
   width: 120px; }
 
+/*
+ * Services - Homepage 
+ */
 .services-block {
   display: flex;
   align-content: center; }
@@ -1029,6 +1046,9 @@ aside a.button {
 .services-block .reading {
   background-image: url("/assets/images/bookshelf.jpg"); }
 
+/*
+ * Footer 
+ */
 .footer-block {
   display: flex;
   align-content: center; }

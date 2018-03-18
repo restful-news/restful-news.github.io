@@ -6,23 +6,28 @@ title: Our Team
 <div class="team-block">
     <div class="member">
         <img src="assets/images/humans/img_avatar.png" />
-        <small>Chris Joy</small>
+        <span>Chris Joy</span>
+        <small>Product Owner <br> Development Lead</small>
     </div>
     <div class="member">
         <img src="assets/images/humans/img_avatar.png" />
-        <small>Oliver Dolk</small>
+        <span>Oliver Dolk</span>
+        <small>Project Manger <br> Data Science Lead</small>
     </div>
     <div class="member">
         <img src="assets/images/humans/img_avatar.png" />
-        <small>Chris Johnston</small>
+        <span>Chris Johnston</span>
+        <small>Font End Developer <br> System Analyst</small>
     </div>
     <div class="member">
         <img src="assets/images/humans/img_avatar.png" />
-        <small>Raycole Dai</small>
+        <span>Raycole Dai</span>
+        <small>Back End Developer <br> System Analyst</small>
     </div>
     <div class="member">
         <img src="assets/images/humans/img_avatar.png" />
-        <small>Lachlan Jones</small>
+        <span>Lachlan Jones</span>
+        <small>System Analyst <br> Security Lead</small>
     </div>
 </div>
 
