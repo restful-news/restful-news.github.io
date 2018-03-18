@@ -4,5 +4,4 @@ description: Retrieve news articles about Australian companies.
 show_sidebar: true
 github:
   docs: /docs
-  team: /team
   zip_url: https://github.com/mrchrisjoy/restful-news/archive/master.zip

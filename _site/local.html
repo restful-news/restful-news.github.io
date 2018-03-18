@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=" media="screen" type="text/css">
+    <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
+    <title>Local Installation | RESTful News</title>
+    <link rel="icon" type="image/png" href="/assets/images/favico.png" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Local Installation | RESTful News</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Local Installation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Retrieve news articles about Australian companies." />
+<meta property="og:description" content="Retrieve news articles about Australian companies." />
+<link rel="canonical" href="http://localhost:4000/local.html" />
+<meta property="og:url" content="http://localhost:4000/local.html" />
+<meta property="og:site_name" content="RESTful News" />
+<script type="application/ld+json">
+{"description":"Retrieve news articles about Australian companies.","@type":"WebPage","url":"http://localhost:4000/local.html","headline":"Local Installation","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="http://localhost:4000/">
+          <h1>RESTful News</h1>
+        </a>
+        <h2>Retrieve news articles about Australian companies.</h2>
+        
+        
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1 id="local-installation">Local Installation</h1>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+  <li>MongoDB</li>
+  <li>Node &gt;7.4</li>
+  <li>pm2 (production)</li>
+</ul>
+
+<h2 id="setting-up--running-locally">Setting up &amp; running locally</h2>
+<h3 id="1-clone-the-repo">1. Clone the repo.</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:restful-news/restful-news.git
+<span class="nb">cd </span>restful-news
+</code></pre></div></div>
+<h3 id="2-install-dependencies">2. Install dependencies.</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i
+</code></pre></div></div>
+<h3 id="3-initalise-the-environment">3. Initalise the environment.</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env.example .env
+</code></pre></div></div>
+<p>Replace the provided example keys with your own keys in <code class="highlighter-rouge">.env</code>.</p>
+<h3 id="4-start-the-server">4. Start the server.</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm start
+</code></pre></div></div>
+<p>Note: Make sure mongodb is running.</p>
+
+<h2 id="commands">Commands</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">test</span> <span class="c"># test using Jest</span>
+npm run <span class="nb">test</span>:unit <span class="c"># run unit tests</span>
+npm run <span class="nb">test</span>:integration <span class="c"># run integration tests</span>
+npm run coverage <span class="c"># test and open the coverage report in the browser</span>
+npm run lint <span class="c"># lint using ESLint</span>
+npm run dev <span class="o">()</span> <span class="c"># run the API in development mode</span>
+npm run prod <span class="c"># run the API in production mode</span>
+npm run docs <span class="c"># generate API docs</span>
+</code></pre></div></div>
+
+<h2 id="directory-structure">Directory structure</h2>
+
+<h3 id="overview">Overview</h3>
+
+<p>You can customize the <code class="highlighter-rouge">src</code> and <code class="highlighter-rouge">api</code> directories.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/
+├─ api/
+│  ├─ user/
+│  │  ├─ controller.js
+│  │  ├─ index.js
+│  │  ├─ index.test.js
+│  │  ├─ model.js
+│  │  └─ model.test.js
+│  └─ index.js
+├─ services/
+│  ├─ express/
+│  ├─ facebook/
+│  ├─ mongoose/
+│  ├─ passport/
+│  ├─ sendgrid/
+│  └─ your-service/
+├─ app.js
+├─ config.js
+└─ index.js
+</code></pre></div></div>
+
+<h3 id="srcapi">src/api/</h3>
+
+<p>Here is where the API endpoints are defined. Each API has its own folder.</p>
+
+<h4 id="srcapisome-endpointmodeljs">src/api/some-endpoint/model.js</h4>
+
+<p>It defines the Mongoose schema and model for the API endpoint. Any changes to the data model should be done here.</p>
+
+<h4 id="srcapisome-endpointcontrollerjs">src/api/some-endpoint/controller.js</h4>
+
+<p>This is the API controller file. It defines the main router middlewares which use the API model.</p>
+
+<h4 id="srcapisome-endpointindexjs">src/api/some-endpoint/index.js</h4>
+
+<p>This is the entry file of the API. It defines the routes using, along other middlewares (like session, validation etc.), the middlewares defined in the <code class="highlighter-rouge">some-endpoint.controller.js</code> file.</p>
+
+<h3 id="services">services/</h3>
+
+<p>Here you can put <code class="highlighter-rouge">helpers</code>, <code class="highlighter-rouge">libraries</code> and other types of modules which you want to use in your APIs.</p>
+
+<h2 id="error-handling">Error handling</h2>
+
+<p>Errors are handled by the <code class="highlighter-rouge">services/error</code> middleware. You can pass errors within an async call by calling <code class="highlighter-rouge">next(error)</code> where error is an Object with a Prototype of error. The APIError constructor function has been provided for creating anticipated operational errors.</p>
+
+<h2 id="logging">Logging</h2>
+
+<p>Logging is achieved via Pino. In development mode we can pipe Node’s stdout into Pino for pretty printing.</p>
+
+
+        </section>
+
+        <aside id="sidebar">
+            
+            <a href="/" class="button">
+                <small>Site</small>
+                Home
+            </a>
+            <a href="/docs" target="_blank" class="button">
+                <small>API</small>
+                Docs
+            </a>
+            <a href="/local" class="button">
+              <small>Local</small>
+                Install
+            </a>
+            <a href="/cloud" class="button">
+              <small>Cloud</small>
+                Deploy
+            </a>
+            <a href="/team" class="button">
+              <small>Our Dev</small>
+              Team
+            </a>
+            <!-- <a href="https://github.com/mrchrisjoy/restful-news/archive/master.zip" class="button">
+              <small>Download</small>
+              .zip file
+            </a> -->
+            
+
+            
+        </aside>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

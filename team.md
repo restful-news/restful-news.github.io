@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Team
 ---
 # The Team
 <div class="team-block">
