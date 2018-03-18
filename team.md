@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Team
+title: Our Team
 ---
-# The Team
+# Our Team
 <div class="team-block">
     <div class="member">
         <img src="assets/images/humans/img_avatar.png" />

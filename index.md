@@ -23,7 +23,7 @@ RESTful News follows the [OpenAPI specifications](https://swagger.io/docs/specif
 
 # API Usage
 
-You can use our public news api (`api.restfulnews.com`) from within your website / SPA using CORS.
+You can use our public api (`api.restfulnews.com`) right from your website / SPA (single page application) via CORS.
 
 ## Authentication
 [HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.

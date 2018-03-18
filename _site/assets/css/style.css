@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -1009,22 +1010,42 @@ aside a.button {
   height: 150px;
   background-color: blanchedalmond;
   margin-right: 30px;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  background-size: cover; }
 
 .services-block .member span {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 1.5em;
   font-weight: bold;
-  color: white; }
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); }
 
 .services-block .trading {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/qt.jpg");
-  background-size: cover; }
+  background-image: url("/assets/images/qt.jpg"); }
 
 .services-block .portfolio {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/assets/images/portfolio.jpg");
-  background-size: cover; }
+  background-image: url("/assets/images/portfolio.jpg"); }
 
 .services-block .reading {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/images/bookshelf.jpg");
-  background-size: cover; }
+  background-image: url("/assets/images/bookshelf.jpg"); }
+
+.footer-block {
+  display: flex;
+  align-content: center; }
+
+.footer-block .block {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-bottom: 30px; }
+
+.footer-block .block span {
+  color: grey; }
+
+.footer-block .block ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px; }
+
+.footer-block .block li:before {
+  content: "► "; }
