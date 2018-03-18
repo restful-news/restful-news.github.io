@@ -7,6 +7,10 @@
  * Custom CSS
  */
 
+.site-title {
+    font-size: 2em;
+}
+
 aside a.button {
     display: block;
     width: 138px;
@@ -36,4 +40,47 @@ aside a.button {
 
 .team-block .member img {
     width: 120px;
+}
+
+.services-block {
+    display: flex;
+    align-content: center;
+}
+
+.services-block .member {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;  
+    width: 200px;
+    height: 150px;
+    background-color: blanchedalmond;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.services-block .member span {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.services-block .trading {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+       url('/assets/images/qt.jpg');
+    background-size: cover;
+}
+
+
+.services-block .portfolio {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+       url('/assets/images/portfolio.jpg');
+    background-size: cover;
+}
+
+.services-block .reading {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), 
+       url('/assets/images/bookshelf.jpg');
+    background-size: cover;
 }

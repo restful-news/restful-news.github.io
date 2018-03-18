@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/assets/css/style.css?v=" media="screen" type="text/css">
     <link rel="stylesheet" href="/assets/css/print.css" media="print" type="text/css">
     <title>RESTful News</title>
+    <link rel="icon" type="image/png" href="/assets/images/favico.png" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -43,19 +44,40 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1 id="restful-news-api">RESTful News API</h1>
-<p>RESTful News API enables developers to build appl.</p>
+          <center><span class="site-title">Everything you need for intelligent news apps.</span></center>
+<p><br /></p>
 
-<p>RESTful News API conventions are based on <a href="https://swagger.io/docs/specification/about/">OpenAPI specifications</a>.</p>
+<p>RESTful News API integrates natural language processing technologies with an open indexer, allowing developers to collate different news sources effectively. Developers can use their own API keys for different news platforms if they wish to exceed our 250 reqs/day limit.</p>
 
-<h1 id="basic-usage">Basic Usage</h1>
+<p>RESTful News API follows the <a href="https://swagger.io/docs/specification/about/">OpenAPI specifications</a>.</p>
+
+<div class="services-block">
+    <div class="member trading">
+        <span>Quantitative Trading</span>
+    </div>
+    <div class="member portfolio">
+        <span>Portfolio Management</span>
+    </div>
+    <div class="member reading">
+        <span>News Reading Apps</span>
+    </div>
+</div>
+
+<h1 id="api-usage">API Usage</h1>
+
+<p>You can use our public news api (<code class="highlighter-rouge">api.restfulnews.com</code>) from within the browser (using CORS).</p>
+
 <h2 id="authentication">Authentication</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme">HTTP BASIC Authentication</a> returning a JWT token.</p>
 <h3 id="creating-a-user">Creating a user</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://api.restfulnews.com/users <span class="nt">-i</span> <span class="nt">-d</span> <span class="s2">"email=test@example.com&amp;password=123456&amp;access_token=MASTER_KEY_HERE"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://api.restfulnews.com/users <span class="se">\</span>
+    <span class="nt">-i</span> <span class="nt">-d</span> <span class="s2">"email=test@example.com&amp;password=123456"</span>
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://api.restfulnews.com/auth <span class="nt">-i</span> <span class="nt">-u</span> <span class="nb">test</span>@example.com:123456 <span class="nt">-d</span> <span class="s2">"access_token=MASTER_KEY_HERE"</span>
+<h3 id="obtain-an-access-token">Obtain an access token</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST http://api.restfulnews.com/auth <span class="se">\</span>
+    <span class="nt">-i</span> <span class="nt">-u</span> <span class="nb">test</span>@example.com:123456 <span class="nt">-d</span> <span class="s2">"access_token=MASTER_KEY_HERE"</span>
 </code></pre></div></div>
+
 
         </section>
 
