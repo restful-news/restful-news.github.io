@@ -17,7 +17,7 @@ title: Our Team
     <div class="member">
         <img src="assets/images/humans/JohsntonC.jpg" />
         <span>Chris Johnston</span>
-        <small>Font End Developer <br> System Analyst</small>
+        <small>Front End Developer <br> System Analyst</small>
     </div>
     <div class="member">
         <img src="assets/images/humans/DaiR.jpg" />
