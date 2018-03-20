@@ -41,7 +41,7 @@
                 <small>Site</small>
                 Home
             </a>
-            <a href="{{ site.github.docs}}" target="_blank" class="button">
+            <a href="{{ site.urls.api_docs }}" target="_blank" class="button">
                 <small>API</small>
                 Docs
             </a>
@@ -90,11 +90,11 @@
             </ul>
           </div>
           <div class="block">
-            <span>Projects</span>
+            <span>Source Code</span>
             <ul>
-              <li><a href="https://github.com/restful-news" target="_blank">Github Org</a></li>
-              <li><a href="https://github.com/restful-news/restful-news.github.io" target="_blank">Website</a></li>
-              <li><a href="https://github.com/restful-news/restful-news" target="_blank">API</a></li>
+              <li><a href="{{ site.urls.github_org }}" target="_blank">Organisation</a></li>
+              <li><a href="{{ site.urls.website_repo }}" target="_blank">restfulnews.com</a></li>
+              <li><a href="{{ site.urls.api_repo }}" target="_blank">API</a></li>
             </ul>
           </div>
           <div class="block">
@@ -103,7 +103,7 @@
               <li><a href="https://insomnia.rest" target="_blank">Insomnia Client</a></li>
               <li><a href="https://app.restfulnews.com/login" target="_blank">Register</a></li>
               <li><a href="https://app.restfulnews.com/signup" target="_blank">Login</a></li>
-            </ul>  
+            </ul>
           </div>
         </div>
         <small>© Copyright <a href="{{ '/' | absolute_url }}">RESTful News</a> 2018.</small> 

@@ -1,7 +1,8 @@
 theme: jekyll-theme-architect
 title: RESTful News
-description: Retrieve news articles about Australian companies.
+description: Open source news API for quants.
 show_sidebar: true
-github:
-  docs: /docs
-  zip_url: https://github.com/mrchrisjoy/restful-news/archive/master.zip
+urls:
+  github_org: https://github.com/restfulnews
+  website_repo: https://github.com/restfulnews/restfulnews.com
+  api_repo: https://github.com/restfulnews/api
