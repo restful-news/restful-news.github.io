@@ -4,10 +4,6 @@ layout: default
 
 <center><span class="site-title">Everything you need for intelligent news apps.</span></center><br>
 
-RESTful News integrates natural language processing technologies with an open indexer, allowing developers to collate different news sources effectively. Developers can use their own API keys for different news platforms if they wish to exceed our 250 reqs/day limit.
-
-RESTful News follows the [OpenAPI specifications](https://swagger.io/docs/specification/about/).
-
 <div class="services-block">
     <div class="member trading">
         <span>Quantitative Trading</span>
@@ -20,6 +16,9 @@ RESTful News follows the [OpenAPI specifications](https://swagger.io/docs/specif
     </div>
 </div>
 
+RESTful News integrates natural language processing technologies with an open indexer, allowing developers to collate different news sources effectively. Developers can use their own API keys for different news platforms if they wish to exceed our 250 reqs/day limit.
+
+RESTful News follows the [OpenAPI specifications](https://swagger.io/docs/specification/about/).
 
 # API Usage
 
