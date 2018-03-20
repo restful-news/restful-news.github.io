@@ -3,6 +3,7 @@ title: RESTful News
 description: Open source news API for quants.
 show_sidebar: true
 urls:
+  api_docs: https://docs.restfulnews.com/
   github_org: https://github.com/restfulnews
   website_repo: https://github.com/restfulnews/restfulnews.com
   api_repo: https://github.com/restfulnews/api
