@@ -38,6 +38,10 @@ define({ "api": [
         ]
       }
     },
+    "successExample":{
+      "name": "Paul",
+      "Age" : "5"
+    },
     "error": {
       "fields": {
         "Error 4xx": [
