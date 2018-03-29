@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "post",
-    "url": "/authAAAAA",
+    "url": "/auth",
     "title": "Authenticate",
     "name": "Authenticate",
     "group": "Auth",
