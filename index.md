@@ -23,23 +23,21 @@ RESTful News follows the [OpenAPI specifications](https://swagger.io/docs/specif
 # API Usage
 
 You can use our public api (`api.restfulnews.com`) right from your website / SPA (single page application) via CORS.
-
-## Authentication
-[HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.
-### Creating a user
+## Creating a user
 ```bash
 curl --request POST --url http://api.restfulnews.com/users \
 --header 'content-type: application/json' \
 --data '{ "email": "<email>", "password": "<password>", \
 "name": "<name>", "picture": "<picture link>"}'
 ```
-### Authenticate a user
+## Authenticate a user
+[HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.
 ```bash
 curl http://api.restfulnews.com/auth -XPOST \
 -H 'Content-Type:application/json' \
 -d '{"email":"<email>","password":"<password>"}'
 ```
-### Searching news
+## Searching news
 ```bash
 curl --request GET \
 --url http://api.restfulnews.com/search?topics=<topics>&start_date=<iso_time>&end_date=<iso_time> \
