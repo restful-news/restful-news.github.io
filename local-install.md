@@ -13,8 +13,8 @@ title: Local Installation
 ## Setting up & running locally
 ### 1. Clone the repo.
 ```bash
-git clone git@github.com:restful-news/restful-news.git
-cd restful-news
+git clone git@github.com:restfulnews/api.git
+cd api
 ```
 ### 2. Install dependencies.
 ```bash
