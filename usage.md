@@ -80,11 +80,11 @@ end_date = '2018-03-25T00:00:00.000Z'
         
 news = prn.search_news(token, topics, companyids, start_date, end_date)
 ```
-You can access any of the fields as defined in http://docs.restfulnews.com/#api-Search-SearchNews by using the news dictionary. For example if I wanted to find the  title of the news I would after running the above code do:
+You can access any of the fields as defined in http://docs.restfulnews.com/#api-Search-SearchNews by using the news dictionary. For example, if I wanted to find the  titles of the news I would after running the above code do (assuming there were no errors with my query):
 
 ```python
-title = news['title']
-
+for news_article in news['data']:
+    print(news_article['title'])
 ```
 
 ### More information on Python module
