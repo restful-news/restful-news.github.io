@@ -24,7 +24,7 @@ RN Analytics' front end stack is made up of the web technologies.
 * Webpack: module bundling, which was included in the vue-cli for easy of use
 
 ## Directory structure
-Our project's directory structure looks like this:
+The project's directory structure looks like this:
 ```
 app.restfulnews.com
 ├── App.vue
@@ -65,4 +65,9 @@ The main folders we'll be focusing on are `components`, `containers`, `store`.
 - `store`: contains vuex modules relevant to our application's store. In theory, each API route we have will have it's respective store on the front end.
 
 ## Data Flow
+The data architecture diagram below highlights the different layers within the front end application and how data flows through each layer. 
 ![Data Architectecture Diagram](/assets/images/dad.jpg)
+The state of the application is manipulated via actions and mutations. When a user triggers an action (ie. Sending a search request), a mutation is invoked. In vuex, we call this a `commit`. After this mutation is invoked, the invokee of the action calls a getter to obtain the next state.
+
+## So what's next?
+This build only provides a generic interface for our API (ie. provides basic functionality to highlight core aspects of our API). We plan on using this project as the foundation to our next prototype which will offer features more specific to our mission. Our mission and features will be the basis of our next post... So stay tuned!
