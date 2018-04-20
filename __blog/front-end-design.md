@@ -15,4 +15,13 @@ RN's front end stack consists of the following web technologies.
 * Bulma: CSS framework we use to manange our grids etc
 * Webpack: for module bundling, which was included in the vue-cli for easy of use
 
+## Components
+
+
+## Application State Management
+
+
 ## Accessing the API
+
+
+## Conclusion
