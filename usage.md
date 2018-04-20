@@ -26,6 +26,7 @@ curl http://api.restfulnews.com/auth -XPOST \
 ```
 
 ### Searching news
+This requires the authenticated token to be passed in
 ```bash
 curl --request GET \
 --url 'http://api.restfulnews.com/search?topics=australia&companyids=woolworths&start_date=2011-02-22T23:39:03.000Z&end_date=2018-02-22T23:39:03.000Z' \
