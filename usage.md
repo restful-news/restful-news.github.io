@@ -8,6 +8,8 @@ You can use our public api (`api.restfulnews.com`) right from your website / SPA
 ## Curl Usage
 
 ### Creating a user
+To begin using our api you need to create a user. When you create a user a JWT token will be returned. Please keep hold of this token as you will need it whilst searching for news and most other routes that require authorization as a header.
+
 ```bash
 curl --request POST --url http://api.restfulnews.com/users \
 --header 'content-type: application/json' \
@@ -15,8 +17,8 @@ curl --request POST --url http://api.restfulnews.com/users \
 ```
 
 ### Authenticate a user
-[HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.  
-This token must then be used to authenticate all following API calls.
+If you lose track of your token after creating a user you can get your token by authenticating.
+[HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.
 ```bash
 curl --request POST --url http://api.restfulnews.com/auth \
 --header 'content-type: application/json' \
@@ -24,7 +26,7 @@ curl --request POST --url http://api.restfulnews.com/auth \
 ```
 
 ### Searching news
-This (and other requests for data) requires that the token from User Authentication be passed in. This is included in the authorization header which requires your bearer token(referred to as the JWT token above).
+To search for news (and other requests for data) you need the jwt token. This should be included in the authorization header as shown below.
 ```bash
 curl --request GET \
 --url 'http://api.restfulnews.com/search?topics=australia&companyids=woolworths&start_date=2011-02-22T23:39:03.000Z&end_date=2018-02-22T23:39:03.000Z' \
