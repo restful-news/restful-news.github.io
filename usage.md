@@ -18,6 +18,7 @@ curl --request POST --url http://api.restfulnews.com/users \
 
 ### Authenticate a user
 [HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.
+This token must then be used to authenticate for all following API calls
 ```bash
 curl http://api.restfulnews.com/auth -XPOST \
 -H 'Content-Type:application/json' \
@@ -77,7 +78,7 @@ topics = 'food'
 companyids = 'woolworths'
 start_date = '2018-03-01T00:00:00.000Z'
 end_date = '2018-03-25T00:00:00.000Z'
-        
+
 news = prn.search_news(token, topics, companyids, start_date, end_date)
 ```
 You can access any of the fields as defined in http://docs.restfulnews.com/#api-Search-SearchNews by using the news dictionary. For example, if I wanted to find the  titles of the news I would after running the above code do (assuming there were no errors with my query):
