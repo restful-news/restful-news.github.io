@@ -2,7 +2,6 @@
 layout: default
 title: System Design
 ---
-# API Design
 
 ## Directory structure
 

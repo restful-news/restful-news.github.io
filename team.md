@@ -2,7 +2,7 @@
 layout: default
 title: Our Team
 ---
-# Our Team
+
 <div class="team-block">
     <div class="member">
         <img src="assets/images/humans/JoyC.jpg" />

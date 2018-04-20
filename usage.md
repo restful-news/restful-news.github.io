@@ -3,8 +3,6 @@ layout: default
 title: API Usage
 ---
 
-# API Usage
-
 You can use our public api (`api.restfulnews.com`) right from your website / SPA (single page application) via CORS.
 
 ## Curl Usage

@@ -2,7 +2,6 @@
 layout: default
 title: Local Installation
 ---
-# Local Installation
 
 ## Requirements
 - MongoDB

@@ -32,34 +32,33 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
+          {% if page.title %}
+            <h1>{{page.title}}</h1>
+          {% endif %}
           {{ content }}
         </section>
 
         <aside id="sidebar">
             {% if site.show_sidebar %}
             <a href="/" class="button">
-                <small>Site</small>
-                Home
+              <small>Site</small>
+              Home
             </a>
             <a href="/usage" class="button">
-                <small>API</small>
-                Usage
+              <small>API</small>
+              Usage
             </a>
             <a href="/changelog" class="button">
               <small>Versioning</small>
               Changelog
             </a>
             <a href="{{ site.urls.api_docs }}" target="_blank" class="button">
-                <small>API</small>
-                Docs
+              <small>API</small>
+              Docs
             </a>
-            <a href="{{ '/local-install' | absolute_url }}" class="button">
-              <small>Local</small>
-                Install
-            </a>
-            <a href="{{ '/cloud-deploy' | absolute_url }}" class="button">
-              <small>Cloud</small>
-                Deploy
+            <a href="{{ '/blog' | absolute_url }}" class="button">
+              <small>Our</small>
+                Blog
             </a>
             {% endif %}
             {% if site.github.is_project_page %}
@@ -77,6 +76,7 @@
             <ul>
               <li><a href="{{ '/' | absolute_url }}">Homepage</a></li>
               <li><a href="{{ '/team' | absolute_url }}">Our Team</a></li>
+              <li><a href="{{ '/blog' | absolute_url }}">Blog</a></li>
             </ul>
           </div>
           <div class="block">
@@ -101,8 +101,7 @@
             <span>Apps & Services</span>
             <ul>
               <li><a href="https://insomnia.rest" target="_blank">Insomnia Client</a></li>
-              <li><a href="https://app.restfulnews.com/login" target="_blank">Register</a></li>
-              <li><a href="https://app.restfulnews.com/signup" target="_blank">Login</a></li>
+              <li><a href="http://app.restfulnews.com" target="_blank">Register</a></li>
             </ul>
           </div>
         </div>

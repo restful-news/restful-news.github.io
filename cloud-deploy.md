@@ -2,7 +2,6 @@
 layout: default
 title: Cloud Deployment
 ---
-# Cloud Deployment
 
 ## Running on AWS Ubuntu 16.04 AMI
 1. Clone repo to `/srv/restful-news` (use `~/.ssh/read-key` & `~/.ssh/config` file)
