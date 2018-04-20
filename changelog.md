@@ -3,7 +3,6 @@ layout: default
 title: Changelog
 ---
 
-# [Changelog](http://keepachangelog.com/)
 All releases will be documented in this file.
 
 ## [0.3.1] 2018-03-28 API Restructure
