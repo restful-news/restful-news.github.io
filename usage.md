@@ -18,13 +18,13 @@ curl --request POST --url http://api.restfulnews.com/users \
 [HTTP BASIC Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) returning a JWT token.  
 This token must then be used to authenticate all following API calls.
 ```bash
-curl http://api.restfulnews.com/auth -XPOST \
--H 'Content-Type:application/json' \
--d '{"email":"<email>","password":"<password>"}'
+curl --request POST --url http://api.restfulnews.com/auth \
+--header 'content-type: application/json' \
+--data '{ "email": "<email>", "password": "<password>" }'
 ```
 
 ### Searching news
-This (and other requests for data) requires that the token from User Authentication be passed in.
+This (and other requests for data) requires that the token from User Authentication be passed in. This is included in the authorization header which requires your bearer token(referred to as the JWT token above).
 ```bash
 curl --request GET \
 --url 'http://api.restfulnews.com/search?topics=australia&companyids=woolworths&start_date=2011-02-22T23:39:03.000Z&end_date=2018-02-22T23:39:03.000Z' \
