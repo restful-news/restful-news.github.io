@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Front End Design - RN Analytics
+date: 2018-04-20 11:45:31 +1000
 ---
 
 [RN Analytics](https://github.com/restfulnews/app.restfulnews.com) is a single page application (SPA) written in javascript, using the  [VueJS](https://vuejs.org/) framework. 
