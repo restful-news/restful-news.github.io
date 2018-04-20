@@ -4,14 +4,16 @@ title: Initial Front-end Build
 date: 2018-04-20 11:45:31 +1000
 ---
 
-[RN Analytics](https://github.com/restfulnews/app.restfulnews.com) is a single page application (SPA) which uses the [VueJS](https://vuejs.org/) framework. During this initial phase our team committed to build a generic web application that'll showcase our API's key features (ie. company news searching). The three key features that have been implemented in our release include:
-1. Authentication: ability to login and sign up using our /auth and /user API routes.
-2. Searching for news articles: ability to add & remove topics and company names via a simple UI for a given time range. 
-3. Analytical View: provide a small analytical view based on the search results.
+[RN Analytics](https://github.com/restfulnews/app.restfulnews.com) is a single page application (SPA) which uses the [VueJS](https://vuejs.org/) framework, that makes use of the RESTful News API. During this initial phase, our team committed to building a generic web application, that'll showcase our API's key features (eg. company news searching). The three key features that have been implemented in the initial release are the following below.
+1. Authentication: ability to login and sign up directly within the website.
+2. Searching for news articles: ability to add & remove topics and company names via a simple UI and search for articles within certian time period.
+3. Analytical View: compile a small analytical view from the search results.
 
 Initially our team started of using React (another component-based JS library), however after running into several development issues, we decided to try out VueJS.
 
 Vue's core library is focused on the view layer only, and is easy to pick up and integrate with other JS libraries. We are using several other JS libraries to compliment vue, including: axios (for http request handling), fecha (for date formating) and several others. You can take a look at our [package.json](https://github.com/restfulnews/app.restfulnews.com/blob/master/package.json) file to see what other modules we're using. 
+
+This web application is independant from the API. It has it own repo, runs in its own isolated environment and manages and handles errors independantly of the API. 
 
 ## Libraries and Modules
 RN Analytics' front end stack is made up of the web technologies.
@@ -22,7 +24,7 @@ RN Analytics' front end stack is made up of the web technologies.
 * Webpack: module bundling, which was included in the vue-cli for easy of use
 
 ## Directory structure
-Our project structure looks like this:
+Our project's directory structure looks like this:
 ```
 app.restfulnews.com
 ├── App.vue
@@ -58,7 +60,9 @@ app.restfulnews.com
 ```
 The main folders we'll be focusing on are `components`, `containers`, `store`. 
 
-- `components`: consists of dumb components. These components will have no knowledge of the application state, and will only get passed props (properties).
-- `containers`: these are smart components that will have full access to the application
+- `components`: consists of dumb components. These components will have no knowledge of the application state, and will only get access to props (properties).
+- `containers`: these are smart components that will have full access to the application's state. Pages are a likely candidate for these containers.
+- `store`: contains vuex modules relevant to our application's store. In theory, each API route we have will have it's respective store on the front end.
 
 ## Data Flow
+![Data Architectecture Diagram](/assets/images/dad.jpg)
