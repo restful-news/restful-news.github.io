@@ -1,6 +1,6 @@
 theme: jekyll-theme-architect
 title: RESTful News
-description: Source News API / Analytics Platform.
+description: News API / Analytics Platform for Quants.
 show_sidebar: true
 urls:
   api_docs: https://docs.restfulnews.com/
