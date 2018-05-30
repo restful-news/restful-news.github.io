@@ -22,10 +22,6 @@
         <a href="{{ '/' | absolute_url }}">
           <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-        {% if site.github.is_project_page %}
-          <a href="{{ site.github.owner_url }}" class="button"><small>View projects on</small> GitHub</a>
-        {% endif %}
       </div>
     </header>
 
@@ -103,9 +99,8 @@
             </ul>
           </div>
           <div class="block">
-            <span>Apps & Services</span>
+            <span>Apps</span>
             <ul>
-              <li><a href="https://insomnia.rest" target="_blank">Insomnia Client</a></li>
               <li><a href="http://app.restfulnews.com" target="_blank">RN Analytics</a></li>
             </ul>
           </div>
