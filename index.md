@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<div>We've decommissioned our hosted service. Feel free to host it yourself. More details on how you can host your own RESTful News API can be read <a href="https://github.com/restfulnews/api" target="_blank">here</a>.</div><br>
 
 <center><span class="site-title">Everything you need for intelligent news apps.</span></center><br>
 
