@@ -11,6 +11,6 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-{% remote_include https://raw.githubusercontent.com/restfulnews/api/master/CHANGELOG.md %}
+https://raw.githubusercontent.com/restfulnews/api/master/CHANGELOG.md
 
-{% remote_include https://raw.githubusercontent.com/restfulnews/analytics/master/CHANGELOG.md %}
+https://raw.githubusercontent.com/restfulnews/analytics/master/CHANGELOG.md
